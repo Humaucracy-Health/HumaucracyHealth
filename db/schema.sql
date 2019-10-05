@@ -2,7 +2,7 @@ DROP DATABASE patientInfo_db;
 CREATE DATABASE patientInfo_db;
 
 USE patientInfo_db;
-
+​
 CREATE TABLE  patients (
     id INT NOT NULL AUTO_INCREMENT, /* NOT NULL means that this column can not be empty, and it is called a constraint */
     pat_name VARCHAR(255),
@@ -18,13 +18,13 @@ CREATE TABLE  doctors (
 );
 
 CREATE TABLE appointments (
-id INT NOT NULL AUTO_INCREMENT,
-doc_name VARCHAR(255),
-patient_name VARCHAR(255),
-vis_date DATE,
-vis_time TIME,
--- FOREIGN KEY (pat_id) REFERENCES patients(id),
--- FOREIGN KEY (doc_id) REFERENCES doctors(id),
+	id INT NOT NULL AUTO_INCREMENT,
+	doc_name VARCHAR(255),
+	patient_name VARCHAR(255),
+	vis_date DATE,
+	vis_time TIME,
+	-- FOREIGN KEY (pat_id) REFERENCES patients(id),
+	-- FOREIGN KEY (doc_id) REFERENCES doctors(id),
 PRIMARY KEY(id)
 );
 

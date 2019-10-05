@@ -88,7 +88,7 @@
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning {
-  background: #F3BB45;
+  background: #9645f3;
   color: #fff; }
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger,
@@ -213,7 +213,7 @@
   background-color: #EB5E28; }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-warning {
-  background-color: #F3BB45; }
+  background-color: #9645f3; }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-success {
   background-color: #7AC29A; }
@@ -8852,7 +8852,7 @@ img {
   .off-canvas-sidebar[data-active-color="success"] .nav li.active > a[data-toggle="collapse"] i,
   .off-canvas-sidebar[data-active-color="success"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active .sidebar-mini-icon,
   .off-canvas-sidebar[data-active-color="success"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active > a {
-    color: #6bd098;
+    color: #816687;
     opacity: 1; }
   .sidebar[data-active-color="warning"] .nav li.active > a,
   .sidebar[data-active-color="warning"] .nav li.active > a i,
@@ -8866,7 +8866,7 @@ img {
   .off-canvas-sidebar[data-active-color="warning"] .nav li.active > a[data-toggle="collapse"] i,
   .off-canvas-sidebar[data-active-color="warning"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active .sidebar-mini-icon,
   .off-canvas-sidebar[data-active-color="warning"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active > a {
-    color: #fbc658;
+    color: #2E8B57;
     opacity: 1; }
   .sidebar[data-active-color="danger"] .nav li.active > a,
   .sidebar[data-active-color="danger"] .nav li.active > a i,
