@@ -3,18 +3,23 @@ CREATE DATABASE patientInfo_db;
 
 USE patientInfo_db;
 ​
-CREATE TABLE patients (
-    id INT NOT NULL AUTO_INCREMENT, /* NOT NULL means that this column can not be empty, and it is called a constraint */
-    patient_name VARCHAR(255),
-    PRIMARY KEY(id) /* if you don't do line 11, you get an error */
-);
 
 CREATE TABLE  charts (
-    id INT NOT NULL AUTO_INCREMENT, /* NOT NULL means that this column can not be empty, and it is called a constraint */
-    pat_id INT NOT NULL,
-    doc_name VARCHAR(255),
-    FOREIGN KEY (pat_id) REFERENCES patients(id),
-    PRIMARY KEY(id) /* if you don't do line 11, you get an error */
+   id INT NOT NULL AUTO_INCREMENT,
+   pat_id INT NOT NULL,
+   first_name VARCHAR(255),
+   last_name VARCHAR(255),
+   telephone INT(10),
+   email VARCHAR(255),
+   username VARCHAR(255),
+   address VARCHAR(255),
+   city VARCHAR(255),
+   country VARCHAR(255),
+   postal_code INT(5),
+   date_of_birth INT(8),
+   age INT(3),
+   sex VARCHAR(255),
+   PRIMARY KEY(id)
 );
 
 CREATE TABLE appointments (
