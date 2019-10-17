@@ -1,7 +1,3 @@
-INSERT INTO appointments (pat_name) VALUES ('kellin'), ('prakash'), ('valentyna'), ('irina'), ('melinda');
-INSERT INTO appointments (note) VALUES ('This is a test note'), ('Another Test Note');
-INSERT INTO appointments (reason) VALUES ('Reason 1'), ('Reason 2'), ('Reason 3'), ('Reason 4');
-INSERT INTO appointments (doc_name) VALUES ('doc 1'), ('doc 2');
-INSERT INTO appointments (vis_date) VALUES ('2019-12-31'), ('2019-11-19');
-INSERT INTO appointments (vis_time) VALUES ('19:30:00', "%r"), ('22:00:00', "%r");
+INSERT INTO appointments (pat_name, loc_name, note, reason, doc_name, vis_date, vis_time) VALUES ('kellin', 'SF', 'this is a test note', 'reason 1', 'Doctor Bill', '2019-12-31','19:30:00'), ('Arashi', 'SF','this is another test note', 'reason 2', 'Doctor Frank', '2019-11-22','22:00:00');
 INSERT INTO payments (amount) VALUES ('15.99'), ('99.99');
+INSERT INTO charts (first_name, last_name, telephone, email, username, address, city, country, postal_code, date_of_birth, age, sex) VALUES ('Melinda','Santana','9162763279','msantana@gmail.com','Melinduhh','1624 Sacramento','San Franciso','USA','94110','1992-02-27','27','M');

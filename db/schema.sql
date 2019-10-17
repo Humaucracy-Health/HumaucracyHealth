@@ -2,24 +2,23 @@ DROP DATABASE patientInfo_db;
 CREATE DATABASE patientInfo_db;
 
 USE patientInfo_db;
-​
+​;
 
 CREATE TABLE  charts (
-   id INT NOT NULL AUTO_INCREMENT,
-   pat_id INT NOT NULL,
-   first_name VARCHAR(255),
-   last_name VARCHAR(255),
-   telephone INT(10),
-   email VARCHAR(255),
-   username VARCHAR(255),
-   address VARCHAR(255),
-   city VARCHAR(255),
-   country VARCHAR(255),
-   postal_code INT(5),
-   date_of_birth INT(8),
-   age INT(3),
-   sex VARCHAR(255),
-   PRIMARY KEY(id)
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    telephone VARCHAR(20),
+    email VARCHAR(255),
+    username VARCHAR(255),
+    address VARCHAR(255),
+    city VARCHAR(255),
+    country VARCHAR(255),
+    postal_code INT,
+    date_of_birth DATE,
+    age INT,
+    sex VARCHAR(255),
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE appointments (
