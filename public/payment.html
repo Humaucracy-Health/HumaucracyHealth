@@ -184,15 +184,18 @@
 
 <!-- </div> --> 
 <div class="content">
-    <h3 class="title mt-4 text-center">Pay Your Bill</h3>
+    <div class="paymentheader2">Pay Your Bill and Invoice History</div>
+    <br>
                   <div class="col-xl-4">
                 <div class="card">
                   <div class="card-body text-center">
                     
-                      <h2>Invoice #3212</h2>
+                      <div class="paymentheader2">Invoice #3212</div>
+                      <div class="paymentheader">Payment History:</div>
                       <div id ="PaymentHistory"></div>
-                                      
-                        <input type="text" id="OweAmount" name="AmountOwe" placeholder="Amount You Owe">
+                                     
+                      <div class="paymentheader">Amount Remaining:</div>
+                      <div id ="OweAmount"></div>
                         <input type="text" id="PayAmount" name="AmountPay" placeholder="Enter Amount You Want to Pay">
 
                   <button id = "submitPayment">Let's Pay!</button>
@@ -390,6 +393,18 @@
         }
       })
     }
+
+    function deductPayments(){
+      $.ajax({
+        url: '/payments',
+        method: 'GET',
+      }).then(function(res){
+        console.log(res) 
+        for (var i=0; i<res.length; i++){
+          $("#OweAmount").append('<div>' + res[i].amount + '</div>')
+        }
+      })
+    }
   </script>
   <script>
     $(document).ready(function() {
@@ -399,6 +414,7 @@
 
       // demo.initVectorMap();
       getPayments()
+      deductPayments()
 
     });
 

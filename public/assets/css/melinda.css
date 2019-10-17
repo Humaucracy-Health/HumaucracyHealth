@@ -18,6 +18,18 @@ h2 {
     font-size: 20px;
 }
 
+.paymentheader {
+  color: #816687;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.paymentheader2 {
+  font-weight: bold;
+  font-size: 30px;
+  align-content: center;
+}
+
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;
