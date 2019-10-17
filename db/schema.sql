@@ -34,3 +34,13 @@ CREATE TABLE visit_history (
     FOREIGN KEY (appt_id) REFERENCES appointments(id),
     PRIMARY KEY(id) 
 );
+
+CREATE TABLE visit_history (
+    id INT NOT NULL AUTO_INCREMENT, /* NOT NULL means that this column can not be empty, and it is called a constraint */
+    appt_id INT NOT NULL,
+    note VARCHAR(255),
+    -- FOREIGN KEY (pat_id) REFERENCES patients(id),
+    -- FOREIGN KEY (doc_id) REFERENCES doctors(id),
+    FOREIGN KEY (appt_id) REFERENCES appointments(id),
+    PRIMARY KEY(id) 
+);
