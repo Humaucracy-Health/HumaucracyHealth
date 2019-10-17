@@ -190,6 +190,7 @@
                   <div class="card-body text-center">
                     
                       <h2>Invoice #3212</h2>
+                      <div id ="PaymentHistory"></div>
                                       
                         <input type="text" id="OweAmount" name="AmountOwe" placeholder="Amount You Owe">
                         <input type="text" id="PayAmount" name="AmountPay" placeholder="Enter Amount You Want to Pay">
@@ -377,14 +378,27 @@
     
       })
     })
+
+    function getPayments(){
+      $.ajax({
+        url: '/payments',
+        method: 'GET',
+      }).then(function(res){
+        console.log(res) 
+        for (var i=0; i<res.length; i++){
+          $("#PaymentHistory").append('<div>' + res[i].amount + '</div>')
+        }
+      })
+    }
   </script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
+      // demo.initDashboardPageCharts();
 
 
-      demo.initVectorMap();
+      // demo.initVectorMap();
+      getPayments()
 
     });
 

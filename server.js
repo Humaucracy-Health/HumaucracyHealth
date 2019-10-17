@@ -118,6 +118,10 @@ app.post('/insertpayments', function(req, res){
 
 console.log(req.body)
 
+	connection.query('INSERT INTO payments (amount) VALUES (?)', [req.body.PayAmount], function (error, results){
+		if (error) res.send(error)
+		// else res.redirect('/');
+	} )
 	// if (req.body.pat_name.length > 1){
 	// 	connection.query('INSERT INTO payments (pat_name) VALUES (?)', [req.body.pres_name], function (error, results, fields) {
 	// 	  if (error) res.send(error)
