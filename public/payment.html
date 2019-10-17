@@ -188,68 +188,13 @@
                   <div class="col-xl-4">
                 <div class="card">
                   <div class="card-body text-center">
-                      <form action="/insert" method="POST">
+                    
+                      <h2>Invoice #3212</h2>
+                                      
+                        <input type="text" id="OweAmount" name="AmountOwe" placeholder="Amount You Owe">
+                        <input type="text" id="PayAmount" name="AmountPay" placeholder="Enter Amount You Want to Pay">
 
-                        <!-- when you hit the button 
-                    
-                          it makes a req.query object 
-                    
-                            the keys are the name attributes of the form elements
-                    
-                              the values of those keys are whatever the user puts down -->
-                    
-                        <input type="text" name="pres_name" placeholder="put a name">
-                        <button>insert the president</button>
-                      </form>
-                    
-                      <ul></ul>
-                    
-                      <h2>update</h2>
-                      <form action="/update?_method=PUT" method="POST">
-                    
-                        <!-- when you hit the button 
-                    
-                          it makes a req.query object 
-                    
-                            the keys are the name attributes of the form elements
-                    
-                              the values of those keys are whatever the user puts down -->
-                    
-                        <input type="text" name="pres_name" placeholder="put new name">
-                        <input type="text" name="id" placeholder="put in a president id">
-                        <button>update the president</button>
-                      </form>
-                    
-                      <script
-                        src="https://code.jquery.com/jquery-3.3.1.min.js"
-                        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                        crossorigin="anonymous"></script>
-                      <script type="text/javascript">
-                        $.ajax({
-                          url: '/payments',
-                          method: 'GET'
-                        }).then(function(res){
-                          for (var i=0; i<res.length; i++){
-                            var li = $('<li>');
-                            li.text(res[i]['pres_name']);
-                    
-                            var f = $('<form>')
-                            f.attr('action', '/delete?_method=DELETE');
-                            f.attr('method', 'POST');
-                              var inp = $('<input>');
-                                inp.attr('type', 'hidden');
-                                inp.attr('name', 'id');
-                                inp.attr('value', res[i].id)
-                              var b = $('<button>').text('delete');
-                    
-                            f.append(inp, b);
-                    
-                            li.append(f)
-                            $('ul').append(li);
-                          }
-                          // $('div').text(JSON.stringify(res));
-                        })
-                      </script>
+                  <button id = "submitPayment">Let's Pay!</button>
 
                   </div>
                 </div>
@@ -315,10 +260,7 @@
             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
           </label>
 
-            <button class="btn btn-icon btn-round btn-twitter">
-                <a href="/public/youPaid.html">
-            <i class="fa fa-twitter"></i>
-           </button>
+
         </a>
 
         </a>
@@ -418,6 +360,24 @@
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script type="text/javascript">
+    $('#submitPayment').on('click', function (){
+      console.log("you submitted")
+      var PayAmount = $('#PayAmount').val()
+      var OweAmount = $('#OweAmount').val()
+      var Payment = {
+        PayAmount, 
+        OweAmount
+      }
+      $.ajax({
+        url: '/insertpayments',
+        method: 'POST',
+        data: Payment
+      }).then(function(res){
+    
+      })
+    })
+  </script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
@@ -428,7 +388,9 @@
 
     });
 
-    };
+    
+
+
 </script>
   </script>
 </body>

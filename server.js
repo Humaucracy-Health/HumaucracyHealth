@@ -114,19 +114,21 @@ app.get('/payments', function(req, res){
 	});
 });
 
-app.post('/insert', function(req, res){
+app.post('/insertpayments', function(req, res){
 
-	if (req.body.pat_name.length > 1){
-		connection.query('INSERT INTO payments (pat_name) VALUES (?)', [req.body.pres_name], function (error, results, fields) {
-		  if (error) res.send(error)
-		  else res.redirect('/');
-		});
-	}else{
-		res.send('invalid name')
-	}
+console.log(req.body)
+
+	// if (req.body.pat_name.length > 1){
+	// 	connection.query('INSERT INTO payments (pat_name) VALUES (?)', [req.body.pres_name], function (error, results, fields) {
+	// 	  if (error) res.send(error)
+	// 	  else res.redirect('/');
+	// 	});
+	// }else{
+	// 	res.send('invalid name')
+	// }
 });
 
-app.get('/delete', function(req, res){
+app.get('/deletepayments', function(req, res){
 
 	if (req.query.id){
 		connection.query('DELETE FROM payments WHERE id = ?', [req.query.id], function (error, results, fields) {
@@ -138,7 +140,7 @@ app.get('/delete', function(req, res){
 	}
 });
 
-app.get('/update', function(req, res){
+app.get('/updatepayments', function(req, res){
 
 	if (req.query.id && req.query.pat_name.length > 1){
 		connection.query('UPDATE payments SET pat_name = ? WHERE id = ?', [req.query.pat_name, req.query.id], function (error, results, fields) {

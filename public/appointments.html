@@ -292,13 +292,13 @@
                                   li.text(res[i]['pat_name']);
                   
                                   var f = $('<form>')
-                                  f.attr('action', '/delete?_method=DELETE');
+                                  // f.attr('action', '/delete?_method=DELETE');
                                   f.attr('method', 'POST');
                                   var inp = $('<input>');
                                   inp.attr('type', 'hidden');
                                   inp.attr('name', 'id');
                                   inp.attr('value', res[i].id)
-                                  var b = $('<button>').text('delete');
+                                  // var b = $('<button>').text('delete');
                   
                                   f.append(inp, b);
                   
