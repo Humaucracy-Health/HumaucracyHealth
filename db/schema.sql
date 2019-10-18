@@ -10,7 +10,6 @@ CREATE TABLE charts (
     last_name VARCHAR(255),
     telephone VARCHAR(20),
     email VARCHAR(255),
-    username VARCHAR(255),
     address VARCHAR(255),
     city VARCHAR(255),
     country VARCHAR(255),
